@@ -14,7 +14,7 @@ Task-focused Markdown skills for AI agents writing, reviewing, testing and migra
 | [atto-tasks-and-channels](skills/atto-tasks-and-channels/SKILL.md) | Tasks, await, select, channels, backpressure |
 | [atto-ownership-and-memory](skills/atto-ownership-and-memory/SKILL.md) | Moves, borrows, sharing, arenas and transfer |
 | [atto-errors-and-results](skills/atto-errors-and-results/SKILL.md) | Option, Result, throw, raise, panic and trap |
-| [atto-pipelines](skills/atto-pipelines/SKILL.md) | Functional |> and actor pipe |
+| [atto-pipelines](skills/atto-pipelines/SKILL.md) | Functional \|> and actor pipe |
 | [atto-patterns-and-generators](skills/atto-patterns-and-generators/SKILL.md) | Match/switch, type patterns, yield and iterators |
 | [atto-telemetry-and-io](skills/atto-telemetry-and-io/SKILL.md) | Stdio, nonblocking I/O, tracing and instrumentation |
 | [atto-backends-and-testing](skills/atto-backends-and-testing/SKILL.md) | Compiler profiles, test evidence and backend parity |
