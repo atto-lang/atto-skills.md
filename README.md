@@ -9,6 +9,7 @@ Task-focused Markdown skills for AI agents writing, reviewing, testing and migra
 | [atto-getting-started](skills/atto-getting-started/SKILL.md) | Start with a runnable-style .atto example and choose a compiler |
 | [atto-syntax-and-types](skills/atto-syntax-and-types/SKILL.md) | Bindings, classes, conditions, types and matching |
 | [atto-functions-and-modules](skills/atto-functions-and-modules/SKILL.md) | Functions, methods, name lookup, generics and imports |
+| [atto-parameters-and-arguments](skills/atto-parameters-and-arguments/SKILL.md) | Optional vs Option types, named argument binding, defaults and diagnostics |
 | [atto-actors-and-state](skills/atto-actors-and-state/SKILL.md) | Actors, spawn/send, sealed state and mailbox safety |
 | [atto-supervision](skills/atto-supervision/SKILL.md) | Supervisors, failures, lifecycle and CONTROL |
 | [atto-tasks-and-channels](skills/atto-tasks-and-channels/SKILL.md) | Tasks, await, select, channels, backpressure |
