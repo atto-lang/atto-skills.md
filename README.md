@@ -2,6 +2,10 @@
 
 Task-focused Markdown skills for AI agents writing, reviewing, testing and migrating **AttoLang** (`.atto`), an actor-first systems language. The project follows the [Agent Skills specification](https://agentskills.io/specification): each reusable skill lives at `skills/<name>/SKILL.md` with a discoverable YAML `name` and `description`.
 
+## Canonical naming and specification
+
+[atto-skills.md](https://github.com/atto-lang/atto-skills.md) is the maintained AttoLang repository. Use `.atto` source, `atto-*` repository names, and [atto-spec](https://github.com/atto-lang/atto-spec) for current language rules (ownership, borrowing, effects, actors, and syntax). Distinguish proposed and parser-only features from independently executed compiler support in [atto-platform-conformance](https://github.com/atto-lang/atto-platform-conformance). Naming migration does not by itself rename implementation artifacts, guarantee backend compatibility or certify guest execution.
+
 ## Skills catalog
 
 | Skill | Use it for |
@@ -24,14 +28,14 @@ Task-focused Markdown skills for AI agents writing, reviewing, testing and migra
 1. In an agent compatible with Agent Skills, install or copy the relevant `skills/<name>` directory into the client-supported skills location. Different clients use different discovery paths: follow that client's documentation. You can also give an agent the URL of a specific `SKILL.md`.
 2. Start with [atto-getting-started](skills/atto-getting-started/SKILL.md), then load only the skills related to the task.
 3. Consult the [AI authoring guidance](AGENTS.md) and [status/grounding policy](docs/FEATURE_STATUS.md). This repository **does not** supply a compiler, runtime, backend certification, or cross-backend conformance evidence.
-4. Validate metadata and relative links locally using `python3 scripts/validate_skills.py`. CI runs the same check.
+4. Validate skill metadata and local links with a reviewed Rust-based validator once available. The checked-in validation/CI path still needs its Python-to-Rust migration; do not treat the existing script as a supported new development dependency or report Rust validation before it has executed.
 
 ## Provenance and maturity
 
 **DRAFT / TARGET is not IMPLEMENTED.** Some examples are from checked-in playground fixtures; others are explicitly marked as target/proposed syntax. A parser accepting tokens does not certify type checking, runtime lowering, safety, or portable execution.
 
 Authoritative places to consult:
-- [AttoLang language specification](https://github.com/ores-truffle-oreslang/attolang-language-spec.md) (normative target, explicitly draft).
+- [Canonical AttoLang specification](https://github.com/atto-lang/atto-spec) (versioned normative contracts; check each proposal's implementation status).
 - [AttoLang playground](https://github.com/atto-lang/atto-playground) (actual narrow WebAssembly compiler and example fixtures).
 - [Java/Graal compiler](https://github.com/atto-lang/atto-source.java) and [LLVM compiler](https://github.com/atto-lang/atto-source.llvm) (check the particular repository and current implementation).
 - [Agent Skills format](https://agentskills.io/specification).
