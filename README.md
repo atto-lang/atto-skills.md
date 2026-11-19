@@ -28,7 +28,7 @@ Task-focused Markdown skills for AI agents writing, reviewing, testing and migra
 1. In an agent compatible with Agent Skills, install or copy the relevant `skills/<name>` directory into the client-supported skills location. Different clients use different discovery paths: follow that client's documentation. You can also give an agent the URL of a specific `SKILL.md`.
 2. Start with [atto-getting-started](skills/atto-getting-started/SKILL.md), then load only the skills related to the task.
 3. Consult the [AI authoring guidance](AGENTS.md) and [status/grounding policy](docs/FEATURE_STATUS.md). This repository **does not** supply a compiler, runtime, backend certification, or cross-backend conformance evidence.
-4. Validate skill metadata and local links with a reviewed Rust-based validator once available. The checked-in validation/CI path still needs its Python-to-Rust migration; do not treat the existing script as a supported new development dependency or report Rust validation before it has executed.
+4. Validate skill metadata, frontmatter, links and index using the zero-dependency Rust validator: `rustc --edition=2021 scripts/validate_skills.rs -o /tmp/atto-validate-skills && /tmp/atto-validate-skills`. Run its negative-case tests with `rustc --edition=2021 --test scripts/validate_skills.rs -o /tmp/atto-skills-tests && /tmp/atto-skills-tests`. CI executes both commands; report actual run outcomes rather than assuming a pass.
 
 ## Provenance and maturity
 
