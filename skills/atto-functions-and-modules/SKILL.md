@@ -44,6 +44,6 @@ end
 import module math from "+lib/math"
 ~~~
 
-This is **illustrative target syntax**, not universally compiled. The `+` prefix identifies a governed project root with `.atto.pkg.toml` in canonical new projects. Resolver rules must fence symlinks and package boundaries. Do not silently fall back from missing `.atto` sources to `.ores`/`.java`; treat legacy imports as explicit migration modes. Check the compiler's current implementation and its package configuration before editing imports.
+This is **illustrative target syntax**, not universally compiled. The `+` prefix identifies a governed project root with `.atto.pkg.toml` in canonical new projects. Resolver rules must fence symlinks and package boundaries. Do not silently fall back from missing `.atto` sources to foreign-source imports; reject unsupported source extensions unless an explicit, tested migration mode is active. Check the compiler's current implementation and its package configuration before editing imports.
 
-References: [functions/effects](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/03-functions-and-effects.md) and [modules/AOT](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/09-modules-and-aot.md).
+References: [functions/effects](https://github.com/atto-lang/atto-spec) and [modules/AOT](https://github.com/atto-lang/atto-spec).
