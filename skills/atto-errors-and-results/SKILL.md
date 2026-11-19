@@ -31,4 +31,4 @@ Only an `Error`-derived value is valid for `throw`, `raise` and `panic` in the t
 
 **Trap ambiguity:** one design request describes `trap worker.send(msg)` producing `Result`, while the written language spec describes `trap expr` returning `Option`. This is unresolved. Do not silently promise both; use the send API's explicit admission Result until a verified amendment decides.
 
-See [failure specification](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/07-errors-and-failure.md) and [types](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/02-types-and-patterns.md).
+See [failure specification](https://github.com/atto-lang/atto-spec) and [types](https://github.com/atto-lang/atto-spec).
