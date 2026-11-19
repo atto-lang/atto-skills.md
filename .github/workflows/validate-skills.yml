@@ -13,5 +13,12 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - name: Check skills metadata, index and links
-        run: python3 scripts/validate_skills.py
+      - name: Compile and run Rust validator unit tests
+        run: |
+          rustc --version
+          rustc --edition=2021 --test scripts/validate_skills.rs -o "$RUNNER_TEMP/atto-skills-tests"
+          "$RUNNER_TEMP/atto-skills-tests"
+      - name: Check skills metadata, index and links using Rust
+        run: |
+          rustc --edition=2021 scripts/validate_skills.rs -o "$RUNNER_TEMP/atto-validate-skills"
+          "$RUNNER_TEMP/atto-validate-skills"
