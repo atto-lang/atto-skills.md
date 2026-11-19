@@ -1,6 +1,6 @@
 ---
 name: atto-ownership-and-memory
-description: Review AttoLang ownership, borrowing and memory safety. Use for rt take, rt copy, borrows, shares, actor messages, pointer transport, lifetimes, arena memory and FFI safety.
+description: Review AttoLang ownership, borrowing and memory safety. Use for take!, copy!, copy!!, borrow!, share!, actor messages, pointer transport, lifetimes, arena memory and FFI safety.
 ---
 
 # Ownership and memory safety
@@ -11,16 +11,17 @@ The source-level ownership model applies to ordinary values, actor state, tasks,
 
 | Source | Meaning |
 | --- | --- |
-| `rt take value` | Move exclusive ownership; source must become unusable |
-| `rt copy value` | Duplicate only proven Copy types |
-| `rt borrow value` | Scoped immutable loan |
-| `rt borrow mut value` | Scoped exclusive mutable loan |
-| `rt share value` | Explicitly permitted frozen/shared ownership |
-| `rt ref` / `rt deref` / `rt unref` | Checked managed-handle operations |
+| `take! value` | Move unique ownership; the original owned place becomes unusable |
+| `copy! value` | Shallow copy where type/alias permissions allow it; not deep transport isolation |
+| `copy!! value` | Deep graph copy of reachable mutable data with independently owned storage, where supported |
+| `borrow! value` | Scoped shared read-only loan; ordinary nonprimitive arguments may borrow implicitly under the current target contract |
+| `borrow! mut value` or `fnc f(Foo x)` called as `f(mut x)` | Exclusive temporary write loan, subject to checked effects and writable authority |
+| `share! value` | Frozen read-only shared ownership; no implicit mutable aliases or locks |
+| `ref!` / `deref!` / `unref!` | Checked handle operations; do not infer raw-pointer privileges |
 
 ~~~atto
 val packet = make_packet()
-val owned = rt take packet
+val owned = take! packet
 // Any subsequent use of packet must fail a move check.
 ~~~
 
@@ -29,7 +30,7 @@ Illustrative: concrete value types, method signatures and backend admission must
 ## Borrow-safety checklist
 
 1. Track owner identity and initialization through control-flow joins and calls.
-2. After `take`, reject use or double-drop of the old place.
+2. After `take!`, reject use or double-drop of the old place.
 3. Mutable borrow must be exclusive; ordinary borrows may not survive a conflicting mutation.
 4. At `await`, `select`, task spawn, actor turn changes and cancellation, either prove pinning/lifetime/alias safety or reject the escaping loan.
 5. Treat `critical-read` / `critical-write` actor-state loans as scoped and nonescaping. Never serialize mutable actor-state pointers or capture them in child tasks.
@@ -40,4 +41,4 @@ Illustrative: concrete value types, method signatures and backend admission must
 
 LLVM targets zero tracing GC on supported native paths, but needs actual allocator and sanitizer evidence. Java/GraalVM targets low GC through arenas, not universal zero GC. Per-actor heaps are logical ownership domains, not automatically protected OS address spaces.
 
-For changes: add negative compile fixtures (use-after-take, leaked borrows, wrong-domain ref, forged share) plus runtime races and native sanitizer jobs. See [ownership specification](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/04-ownership-and-memory.md).
+These are **language target rules**: confirm the selected compiler's exact guest-level implementation. Compare [ownership and synchronized guards](https://github.com/atto-lang/atto-spec/blob/main/language/shared-ownership-and-guards-v1.md) and [implicit argument borrowing](https://github.com/atto-lang/atto-spec/blob/main/language/implicit-argument-borrow-v1.md). For changes: add negative compile fixtures (use-after-take, leaked borrows, wrong-domain ref, forged share) plus runtime races and native sanitizer jobs. See [ownership specification](https://github.com/atto-lang/atto-spec).
