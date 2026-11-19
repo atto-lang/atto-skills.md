@@ -17,13 +17,13 @@ For dates, revisions and actual status, search the target compiler repo's curren
 | Area | Source | Evidence caveat |
 | --- | --- | --- |
 | Intro scalar code, basic functions/conditions | [atto-playground/examples](https://github.com/atto-lang/atto-playground/tree/main/examples) | Limited Rust compiler-to-Wasm subset; inspect exact fixture |
-| Type syntax / lexical grammar | [spec chapter 16](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/16-lexical-and-grammar-reference.md) | Revision-scoped grammar, many target-only forms |
-| Sealed actor state | [spec chapter 05](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/05-actors-and-state.md) | TARGET, not automatically proven by legacy playground actor |
-| Tasks / select | [spec chapter 06](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/06-async-and-scheduling.md) | TARGET syntax; actual lowering may be absent |
-| Supervisor and actor pipelines | [spec chapters 13-15](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/13-supervisor-hierarchies.md) | Draft factories, hierarchical control and graph builder |
-| Ownership and permission admission | [spec chapters 04, 08](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/04-ownership-and-memory.md) | Needs static negative tests and runtime enforcement |
-| Historical Java/LLVM comparison | [observed snapshot 2026-11-03](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/19-observed-status-2026-11-03.md) | Explicitly *not* conformance certification |
-| Full backend parity | [spec chapter 11](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/11-conformance.md) | Requires same-source executed guest, exact-tree receipts |
+| Type syntax / lexical grammar | [current language spec](https://github.com/atto-lang/atto-spec) | Revision-scoped grammar, many target-only forms |
+| Sealed actor state | [actor semantics spec](https://github.com/atto-lang/atto-spec) | TARGET, not automatically proven by legacy playground actor |
+| Tasks / select | [task and scheduling spec](https://github.com/atto-lang/atto-spec) | TARGET syntax; actual lowering may be absent |
+| Supervisor and actor pipelines | [actor supervision contract](https://github.com/atto-lang/atto-spec) | Draft factories, hierarchical control and graph builder |
+| Ownership and permission admission | [ownership and admission contract](https://github.com/atto-lang/atto-spec) | Needs static negative tests and runtime enforcement |
+| Historical Java/LLVM comparison | [executable conformance contract](https://github.com/atto-lang/atto-platform-conformance) | Explicitly *not* conformance certification |
+| Full backend parity | [conformance suite](https://github.com/atto-lang/atto-platform-conformance) | Requires same-source executed guest, exact-tree receipts |
 
 ## Never silently reconcile conflicting syntax
 
