@@ -43,4 +43,4 @@ end
 
 When implementing actors, write positive send/read tests and negative tests for unguarded writes, receiver forgery, stolen ownership, closed/full inbox, stale generation, and cancellation.
 
-See [actor semantics](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/05-actors-and-state.md) and [shared ownership](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/22-concurrency-and-shared-ownership.md).
+See [actor semantics](https://github.com/atto-lang/atto-spec) and [shared ownership](https://github.com/atto-lang/atto-spec).
