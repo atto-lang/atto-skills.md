@@ -5,7 +5,7 @@ description: Write and run first AttoLang programs. Use for hello world, .atto f
 
 # Getting started with AttoLang
 
-AttoLang is an actor-first, statically typed systems language. New code is `.atto`, not Java, Rust, Go, TypeScript, or the legacy `.ores` spelling. Function and method names use `snake_case`.
+AttoLang is an actor-first, statically typed systems language. New code is `.atto`, rather than a host-language or migration-era source spelling. Function and method names use `snake_case`.
 
 ## First program — grounded in the playground fixture
 
@@ -35,5 +35,5 @@ This uses the form in [the checked-in playground hello example](https://github.c
 
 - `val` is immutable; `let` is mutable; `const` requires a compile-time constant. Never use `null` to represent optional data.
 - `: T` and `-> T` are accepted return *targets*, but support differs by backend and body style.
-- The [language specification](https://github.com/ores-truffle-oreslang/attolang-language-spec.md) is explicitly DRAFT/TARGET. It is not a certificate that a feature executes.
+- The [canonical language specification](https://github.com/atto-lang/atto-spec) includes versioned normative contracts and separately marked TARGET proposals. It is not a certificate that a feature executes.
 - Use the [backend/conformance skill](../atto-backends-and-testing/SKILL.md) before asserting support or parity.
