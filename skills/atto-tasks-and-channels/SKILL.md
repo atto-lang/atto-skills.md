@@ -38,4 +38,4 @@ The arm grammar and timeout lowering are still targets; verify with compiler fix
 - `rt cooperate` provides a fairness checkpoint; actor scheduling uses reductions/time budgets, but a watchdog alone is not a hard preemption guarantee.
 - Async I/O may be named without suffix or `_async`; a synchronous-style convenience API must end in `_blocking` and still suspend without parking the actor carrier.
 
-See [async/scheduling](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/06-async-and-scheduling.md) and [ownership](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/04-ownership-and-memory.md).
+See [async/scheduling](https://github.com/atto-lang/atto-spec) and [ownership](https://github.com/atto-lang/atto-spec).
