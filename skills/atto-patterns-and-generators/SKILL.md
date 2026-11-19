@@ -38,4 +38,4 @@ When implementing a generator or iterator:
 4. Check downstream channel backpressure and exactly-once cleanup on early break.
 5. Add positive compile+execute cases and negative type/lifetime cases for every backend being claimed.
 
-See [lexical grammar](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/16-lexical-and-grammar-reference.md) and [async scheduling](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/06-async-and-scheduling.md).
+See [lexical grammar](https://github.com/atto-lang/atto-spec) and [async scheduling](https://github.com/atto-lang/atto-spec).
