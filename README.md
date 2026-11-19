@@ -1,3 +1,5 @@
+> **AI agent instructions (organization-wide):** Before working on code, issues, or pull requests, read and follow the [organization `AGENTS.md`](https://github.com/atto-lang/.github/blob/main/AGENTS.md), including its **merge-first stealth-development policy**. Honor any repository-local `AGENTS.md`, explicit holds, and GitHub-enforced rules.
+
 # AttoLang AI Skills
 
 Task-focused Markdown skills for AI agents writing, reviewing, testing and migrating **AttoLang** (`.atto`), an actor-first systems language. The project follows the [Agent Skills specification](https://agentskills.io/specification): each reusable skill lives at `skills/<name>/SKILL.md` with a discoverable YAML `name` and `description`.
