@@ -7,7 +7,7 @@ description: Validate AttoLang code across compiler backends and CI. Use for Jav
 
 ## Distinguish intended grammar from execution
 
-The [language spec](https://github.com/ores-truffle-oreslang/attolang-language-spec.md) is DRAFT. AttoLang spans Java/Graal, LLVM, Wasm, Forge, .NET Native AOT and additional backend efforts. An implementation repository README is not enough to prove that source compiles or runs. The browser [atto-playground](https://github.com/atto-lang/atto-playground) uses a separate Rust-to-Wasm compiler with a deliberately restricted subset.
+The [canonical language spec](https://github.com/atto-lang/atto-spec) includes normative contracts and TARGET proposals. AttoLang spans Java/Graal, LLVM, Wasm, Forge, .NET Native AOT and additional backend efforts. An implementation repository README is not enough to prove that source compiles or runs. The browser [atto-playground](https://github.com/atto-lang/atto-playground) uses a separate Rust-to-Wasm compiler with a deliberately restricted subset.
 
 ## Agent verification workflow
 
@@ -36,5 +36,5 @@ The [language spec](https://github.com/ores-truffle-oreslang/attolang-language-s
 ## Useful baselines
 
 - [atto-playground README and `npm run verify`](https://github.com/atto-lang/atto-playground)
-- [conformance spec](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/11-conformance.md)
-- [observed 2026-11-03 snapshot](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/19-observed-status-2026-11-03.md) — historical observations, *not* current certification
+- [conformance registry](https://github.com/atto-lang/atto-platform-conformance)
+- [AttoLang platform conformance](https://github.com/atto-lang/atto-platform-conformance) — check exact backend/source receipts, *not* blanket certification

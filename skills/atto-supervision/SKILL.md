@@ -27,4 +27,4 @@ A supervisor owns the controlling lifecycle of child actors, and in the hierarch
 - Root/main unhandled failure yields a non-success result, with exact process exit code determined by profile.
 - A supervisor restart is **not** recovery of the failed actor's same stack frame.
 
-Read [supervisor hierarchies](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/13-supervisor-hierarchies.md), [failure](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/07-errors-and-failure.md), and [runtime guarantees](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/18-runtime-guarantees.md).
+Read [supervisor hierarchies](https://github.com/atto-lang/atto-spec), [failure](https://github.com/atto-lang/atto-spec), and [runtime guarantees](https://github.com/atto-lang/atto-spec).

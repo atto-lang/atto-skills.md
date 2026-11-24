@@ -21,13 +21,14 @@ fnc classify(int n): int {
 }
 ~~~
 
-This form comes from the [playground conditions fixture](https://github.com/atto-lang/atto-playground/blob/main/examples/conditions.atto). Conditions require `bool`; there is no arbitrary truthiness. In current grammar, `,` means AND and `|` means OR **inside conditions**. `eq`/`neq` compare values; `is` is identity/type-test syntax. Do not confuse `=` assignment with equality.
+This form comes from the [playground conditions fixture](https://github.com/atto-lang/atto-playground/blob/main/examples/conditions.atto). Conditions require `bool`; there is no arbitrary truthiness. In current grammar, `,` means AND and `|` means OR **inside conditions**. `eq`/`neq` compare values; `==`/`!=` denote reference identity on objects where admitted, and `is` is a type/identity test. Check backend admission. Do not confuse `=` assignment with equality.
 
 ## Bindings and nominal types
 
 - `val x: int = 42;`: immutable binding.
 - `let x: int = 42;`: mutable binding (confirm backend support).
 - `const`: compile-time constant obligation.
+- Ordinary class fields without a binding qualifier default to immutable `val` under [class-field defaults v2](https://github.com/atto-lang/atto-spec/blob/main/language/class-field-binding-defaults-v2.md); explicit `let` is required for writable state. Cross-backend guest execution still needs evidence.
 - Classes are nominal; same field shape does not automatically imply assignability.
 - A class is **not** an actor; an actor has lifecycle, inbox, and sealed-state requirements.
 - Use `Option<T>`/`Result<T,E>` rather than inventing null values or unchecked exceptions.
@@ -51,4 +52,4 @@ Canonical `on`-arm forms and other matching variants depend on compiler revision
 
 Reject assignment as a condition (`if x = y then`), use-before-initialization, incompatible nominal types, mutation through `val`, unsupported syntactic sugar, ambiguous generics, and nonexhaustive match where exhaustion is required.
 
-See [syntax](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/01-source-and-syntax.md), [types](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/02-types-and-patterns.md), and [observed grammar](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/16-lexical-and-grammar-reference.md).
+See [syntax](https://github.com/atto-lang/atto-spec), [types](https://github.com/atto-lang/atto-spec), and [observed grammar](https://github.com/atto-lang/atto-spec).

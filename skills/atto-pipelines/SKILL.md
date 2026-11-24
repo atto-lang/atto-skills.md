@@ -35,4 +35,4 @@ The more explicit factory APIs `Actor.pipe(A(), B(), ...)`, deferred graph build
 5. If a nested pipeline has a supervisor scope, bind its children to that scope explicitly; don't infer reparenting from syntax.
 6. Test full/closed pipes, mismatched types, stale-generation replays, shared-memory races, restart and cancellation on the selected backend.
 
-See [pipeline factories](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/14-actor-pipeline-factories.md) and [nested builders](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/15-nested-actor-pipelines.md).
+See [pipeline factories](https://github.com/atto-lang/atto-spec) and [nested builders](https://github.com/atto-lang/atto-spec).

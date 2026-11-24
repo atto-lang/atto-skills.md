@@ -33,4 +33,4 @@ The `using telemetry.span(...) as span { ... }` construct is a **desired languag
 
 Demand an end-to-end guest HTTP handler trace, span nesting, cancellation unwinding, disabled-mode overhead measurements, and exact compiler/runtime revisions before claiming instrumentation is implemented.
 
-References: [functions/effects](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/03-functions-and-effects.md), [async/I/O](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/06-async-and-scheduling.md), and [AOT policy](https://github.com/ores-truffle-oreslang/attolang-language-spec.md/blob/main/spec/24-aot-zero-gc-controlled-dynamism.md).
+References: [functions/effects](https://github.com/atto-lang/atto-spec), [async/I/O](https://github.com/atto-lang/atto-spec), and [AOT policy](https://github.com/atto-lang/atto-spec).
